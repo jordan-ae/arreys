@@ -45,7 +45,7 @@
     "type-fest": "^4.10.3",
     "zod": "^3.22.4"
   },
-  "homepage": "https://fiber.dev/handshake",
+  "homepage": "https://fibersyncs.com/handshake",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fiberinc/handshake.git"

@@ -136,7 +136,7 @@ export async function getSanitizedHandlerInfo(): Promise<HandlerInfo[]> {
       provider: {
         id: handler.provider.id,
         title: handler.provider.name,
-        logo: `https://handshake.cool/images/logos/${handler.provider.id}.svg`,
+        logo: `https://handshake.cool/images/provider-logos/original/${handler.provider.id}.svg`,
       },
     };
   });

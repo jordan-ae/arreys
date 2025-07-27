@@ -186,7 +186,7 @@ export interface ShopifyAppCredential {
  *
  * You must have a Shopify app to take users through the OAuth flow. Check out
  * this [in-depth tutorial on how authentication works in the Shopify
- * ecosystem](https://fiber.dev/blog/shopify-oauth-guide).
+ * ecosystem](https://fibersyncs.com/blog/shopify-oauth-guide).
  *
  * Within your app, you'll find the client ID and secret:
  *

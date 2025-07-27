@@ -50,14 +50,7 @@ interface Args {
  * Ensure your app is configured in the Azure portal under `Authentication` with
  * the following redirect URI:
  *
- * `https://YOUR_APP_URL/auth/entra/callback`
- *
- * @troubleshoot
- * ### "invalid_grant" error
- *
- * Ensure that the scopes provided match those configured for the app in Azure.
- * Additionally, confirm the `tenantId` is set correctly if targeting a specific
- * organization.
+ * `https://YOUR_APP_URL/auth/microsoft-entra-id/callback`
  */
 export const MicrosoftEntra: HandlerFactory<Args> = (args) => {
   assert(args.clientId, "clientId is empty or missing");

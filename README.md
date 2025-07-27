@@ -177,7 +177,7 @@ CLI](https://vercel.com/docs/cli/env).
 ### Can you add support for X provider?
 
 Yes! Please open an issue or reach out to us at
-[team@fiber.dev](mailto:team@fiber.dev).
+[team@fibersyncs.com](mailto:team@fibersyncs.com).
 
 ### How is this different from next-auth or passport?
 

@@ -5,8 +5,8 @@ import { debug } from "./logger";
 
 // ATTENTION I'm scared of using these static cookie names here because they may
 // cause conflicts between different concurrent linking attempts. Example: a
-// user starts the flow for tool A at https://link.fiber.dev/A/providerA, then
-// starts https://link.fiber.dev/B/providerB, then ends the flow for tool A and
+// user starts the flow for tool A at https://link.fibersyncs.com/A/providerA, then
+// starts https://link.fibersyncs.com/B/providerB, then ends the flow for tool A and
 // gets redirected to the redirect_uri for tool B.
 
 const ACCOUNT_ID_PARAM = "account_id";

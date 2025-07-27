@@ -2,7 +2,7 @@ import assert from "assert";
 import { z } from "zod";
 
 /**
- * Maps a handler ID to the name of the source on fiber.dev, that we want to
+ * Maps a handler ID to the name of the source on fibersyncs.com, that we want to
  * register accounts to.
  */
 const FIBER_SOURCES: Record<string, string> = {
@@ -125,7 +125,7 @@ export async function postSourceAccount(
   assert(fiberClientId);
   assert(fiberClientSecret);
 
-  const host = process.env.FIBER_API_HOST ?? "https://api.fiber.dev";
+  const host = process.env.FIBER_API_HOST ?? "https://api.fibersyncs.com";
   const url = `${host}/sources/${sourceName}/accounts`;
 
   let res: Response;
