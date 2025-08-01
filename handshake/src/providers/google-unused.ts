@@ -77,7 +77,7 @@ export const Google: HandlerFactory<Args, Credential> = ({ id, ...args }) => {
           expiresAt,
           email,
           scopes,
-        } satisfies Credential,
+        } as Credential,
       };
     },
   };
