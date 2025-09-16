@@ -48,10 +48,10 @@ export function NextHandshake(userOptions: HandshakeOptions) {
 
     const handler = options.getHandler(handlerId);
     if (!handler) {
-      return Response.json(
-        { error: "handler with id not found" },
-        { status: 400 },
-      );
+      return new Response(JSON.stringify({ error: "handler with id not found" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" }
+      });
     }
 
     if (action === "redirect") {
@@ -102,26 +102,26 @@ function handleErrors(handler: (req: NextRequest) => Promise<Response>) {
         const status = e.statusCode;
 
         if (req.headers.get("accept")?.includes("application/json")) {
-          return Response.json({ error: message }, { status });
+          return new Response(JSON.stringify({ error: message }), { status, headers: { "Content-Type": "application/json" } });
         } else {
           return new Response(message, { status });
         }
       }
 
       if (process.env.NODE_ENV === "development") {
-        return Response.json(
-          { inDevError: true, e: e.toString() },
-          { status: 500 },
-        );
+        return new Response(JSON.stringify({ inDevError: true, e: e.toString() }), {
+          status: 500,
+          headers: { "Content-Type": "application/json" }
+        });
       }
 
       // Return an identifier to help the developer track it down in production.
       const errorId = Math.floor(Math.random() * 10000000);
       error(`Unexpected error: ${errorId}`, e);
-      return Response.json(
-        { error: `An unexpected error occured (id=${errorId})` },
-        { status: 500 },
-      );
+      return new Response(JSON.stringify({ error: `An unexpected error occurred (id=${errorId})` }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" }
+      });
     }
 
     // if (!response) {

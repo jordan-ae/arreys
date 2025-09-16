@@ -46,12 +46,10 @@ export async function handleRedirect(
     // Convert any HttpError thrown by the handler into a JSON response with the
     // error message. This is useful to simplify program logic.
     if (e instanceof HttpError) {
-      return Response.json(
-        { message: e.message },
-        {
-          status: e.statusCode,
-        },
-      );
+      return new Response(JSON.stringify({ message: e.message }), {
+        status: e.statusCode,
+        headers: { "Content-Type": "application/json" }
+      });
     }
 
     error("handler.getAuthorizationUrl failed", e);
