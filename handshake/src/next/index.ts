@@ -118,7 +118,7 @@ function handleErrors(handler: (req: NextRequest) => Promise<Response>) {
       // Return an identifier to help the developer track it down in production.
       const errorId = Math.floor(Math.random() * 10000000);
       error(`Unexpected error: ${errorId}`, e);
-      return new Response(JSON.stringify({ error: `An unexpected error occured (id=${errorId})` }), {
+      return new Response(JSON.stringify({ error: `An unexpected error occurred (id=${errorId})` }), {
         status: 500,
         headers: { "Content-Type": "application/json" }
       });
