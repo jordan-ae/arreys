@@ -93,7 +93,7 @@ export async function handleCallback(
     // error message. This is useful to simplify program logic.
     else if (e instanceof HttpError) {
       error("provider.exchange threw http error. this is not ok.", e);
-      return Response.json({ message: e.message }, { status: e.statusCode });
+      return new Response(JSON.stringify({ message: e.message }), { status: e.statusCode, headers: { "Content-Type": "application/json" } });
     }
     // An OAuth handler bubbled up an openid-client error, which is not OK. This
     // is a sanity check.
