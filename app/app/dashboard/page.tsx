@@ -5,6 +5,7 @@ import { Button } from '~/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { Input } from '~/components/ui/input';
 import { Label } from '~/components/ui/label';
+import { createClient } from '~/lib/supabase/client';
 import { addProvider } from '~/lib/supabse';
 
 interface FormData {
@@ -20,10 +21,14 @@ export default function ProviderDashboard() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const session = await fetch('/api/auth/session').then((res) => res.json());
-      if (!session.user?.id) throw new Error('Please log in');
 
-      await addProvider(session.user.id, {
+      const supabase = createClient()
+
+      const { data: {session} } = await supabase.auth.getSession()
+
+      if (!session) throw new Error('Please log in');
+
+      await addProvider(session?.user.id, {
         name: data.providerName,
         clientId: data.clientId,
         clientSecret: data.clientSecret,
