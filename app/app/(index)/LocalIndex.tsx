@@ -132,7 +132,7 @@ export interface HandlerInfo {
 export async function getSanitizedHandlerInfo(): Promise<HandlerInfo[]> {
   const options = await buildOptions();
 
-  return options.handlers.map((handler) => {
+  return options.handlers.map((handler: any) => {
     return {
       id: handler.id,
       provider: {

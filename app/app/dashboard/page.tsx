@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { Input } from '~/components/ui/input';
 import { Label } from '~/components/ui/label';
 import { createClient } from '~/lib/supabase/client';
-import { addProvider } from '~/lib/supabse';
+import { addProvider, getAllProviders, supabase } from '~/lib/supabse';
 
 interface FormData {
   providerName: string;
@@ -18,6 +18,20 @@ interface FormData {
 export default function ProviderDashboard() {
   const { register, handleSubmit, reset } = useForm<FormData>();
   const [error, setError] = useState<string | null>(null);
+
+  const data = getAllProviders()
+
+  console.log(data, "This is the data")
+
+
+  const getData = async () => {
+
+  const data = await supabase.from("providers").select("*")
+
+  return data
+  }
+
+   console.log(getData())
 
   const onSubmit = async (data: FormData) => {
     try {
