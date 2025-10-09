@@ -3,38 +3,14 @@
 @tailwind utilities;
 
 a {
-  @apply text-blue-600 underline visited:text-purple-600 hover:text-blue-800;
-}
-/*
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-foreground hover:text-foreground/80;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-} */
+}
 /*
 ---break--- */
 @layer base {
@@ -89,7 +65,23 @@ body {
     --chart-5: 27 87% 67%;
 
     --radius: 0.5rem
-  }
+  ;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%}
   .dark {
 
     --background: 0 0% 3.9%;
@@ -139,7 +131,23 @@ body {
     --chart-4: 280 65% 60%;
 
     --chart-5: 340 75% 55%
-  }
+  ;
+
+    --sidebar-background: 240 5.9% 10%;
+
+    --sidebar-foreground: 240 4.8% 95.9%;
+
+    --sidebar-primary: 224.3 76.3% 48%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 240 3.7% 15.9%;
+
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+
+    --sidebar-border: 240 3.7% 15.9%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%}
 }
 /*
 ---break--- */
@@ -149,5 +157,15 @@ body {
   }
   body {
     @apply bg-neutral-950 text-neutral-50;
+  }
+}
+/*
+---break--- */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
