@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <head>
           <link
@@ -25,10 +25,7 @@ export default function RootLayout({
 
       <body
         className={twMerge(
-          "bg-background",
-          "text-default",
-          "selection:text-white dark:selection:text-black",
-          "selection:bg-fuchsia-300 selection:text-fuchsia-900",
+          "bg-neutral-950 text-neutral-50"
         )}
       >
         {children}

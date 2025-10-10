@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { options } from "~/options";
+import { buildOptions } from "~/options";
 
 const REPO_URL = "https://github.com/fiberinc/handshake";
 
@@ -130,7 +130,9 @@ export interface HandlerInfo {
 }
 
 export async function getSanitizedHandlerInfo(): Promise<HandlerInfo[]> {
-  return options.handlers.map((handler) => {
+  const options = await buildOptions();
+
+  return options.handlers.map((handler: any) => {
     return {
       id: handler.id,
       provider: {
