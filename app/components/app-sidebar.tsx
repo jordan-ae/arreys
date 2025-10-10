@@ -2,10 +2,12 @@
 
 import * as React from "react"
 import {
+  ChartBar,
   Command,
-  Frame,
-  Map,
-  PieChart,
+  Container,
+  LayoutPanelLeft,
+  Logs,
+  Plug2,
 } from "lucide-react"
 
 import { NavProjects } from "~/components/nav-projects"
@@ -30,27 +32,27 @@ const data = {
     {
       name: "Integrations",
       url: "#",
-      icon: Frame,
+      icon: LayoutPanelLeft,
     },
     {
       name: "Connections",
       url: "#",
-      icon: PieChart,
+      icon: Plug2,
     },
     {
       name: "Log",
       url: "#",
-      icon: Map,
+      icon: Logs,
     },
     {
       name: "Metrics",
       url: "#",
-      icon: Map,
+      icon: ChartBar,
     },
     {
       name: "Enviroment settings",
       url: "#",
-      icon: Map,
+      icon: Container,
     },
   ],
 }
